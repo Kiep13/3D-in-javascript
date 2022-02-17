@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang='ru'>
+<head>
+    <meta charset='UTF-8'>
+    <title>Javascript 3D</title>
+
+    <link rel='preconnect' href='https://fonts.googleapis.com'>
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+    <link href='https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap' rel='stylesheet'>
+
+    <link rel='stylesheet' href='styles/body.css'/>
+    <link rel='stylesheet' href='styles/styles.css'/>
+</head>
+<body>
+    <section class='scene scene__1'>
+        <header class='header'>
+            <img class='header__logo' alt='itechart logo' src='assets/logo_black.svg'>
+        </header>
+        <h1 class='title'>3D в JavaScript</h1>
+    </section>
+
+    <section class='scene scene__2'>
+        <div class='scene__content'>
+            <h1 class='scene__title'>WebGl</h1>
+
+            <span><span class='scene__gray-text'>Год:</span> 2011</span><br/>
+            <span><span class='scene__gray-text'>Официальный сайт: </span> <a href='https://www.khronos.org/webgl/' target='_blank'>khronos.org/webgl</a></span><br/>
+            <span><span class='scene__gray-text'>Разработчик:</span> Khronos  Group</span><br/>
+
+            <p>
+                WebGL (Web Graphics Library) - это JavaScript API для рендеринга интерактивной 2D и 3D графики в любом
+                совместимом веб-браузере без использования плагинов.
+            </p>
+            <p>
+                WebGL исполняется как элемент HTML5 и поэтому является полноценной частью объектной модели документа
+                (DOM API) браузера.
+            </p>
+            <p>
+                API построена <b>OpenGL ES</b>, который в свою очередь представляет собой спецификацию,
+                определяющую платформонезависимый программный интерфейс для написания приложений, использующих
+                двухмерную и трехмерную графику
+                (<a href='https://www.khronos.org/opengles/' target='_blank'>оф. документация</a>).
+                Примечательно, что разработкой OpenGL ES так же занималась Khronos Group.
+            </p>
+
+            <p>Имеет две версии:</p>
+            <ul>
+                <li>WebGl 1.0, вышедшая в 2011 году;</li>
+                <li>WebGl 2.0, вышедшая в 2017. Причина появления второй версии – обновление OpenGL интерфейса.</li>
+            </ul>
+
+            <p>
+                Технология получила широкое распостранение благодаря тому, что может использоваться с любым языком
+                программирования, который работает с DOM API:
+            </p>
+            <ul>
+                <li>JavaScript;</li>
+                <li>Java;</li>
+                <li>Kotlin;</li>
+                <li>Rust и т.д.</li>
+            </ul>
+
+            <p><a href='https://en.wikipedia.org/wiki/List_of_WebGL_frameworks' target='_blank'>Список фреймфорков и библиотек</a></p>
+        </div>
+    </section>
+
+    <section class='scene scene__3'>
+        <div class='scene__content'>
+            <h1 class='scene__title'>Three.js</h1>
+
+            <span><span class='scene__gray-text'>Год:</span> 2013</span><br/>
+            <span><span class='scene__gray-text'>Лицензия:</span> MIT</span><br/>
+            <span><span class='scene__gray-text'>Официальный сайт:</span> <a href='https://threejs.org/' target='_blank'> threejs.org</a></span><br/>
+            <span><span class='scene__gray-text'>GitHub:</span> <a href='https://github.com/mrdoob/three.js' target='_blank'>github.com/mrdoob/three.js</a> (79K звёзд)</span><br/>
+
+            <p>Three.js является легковесной кроссплатформенной JavaScript библиотекой, построенной поверх WebGl.</p>
+            <p>Основная цель проекта - создание простой в использовании, легкой и кросс-браузерной 3D-библиотеки общего назначения.</p>
+            <p>Официальный сайт располагает интерактивной песочницей, предоставляющей возможность попробовать функционал.</p>
+
+            <p>Библиотека оперирует следующими элементами:</p>
+            <ul>
+                <li>Камера;</li>
+                <li>Источники света;</li>
+                <li>Геометрические фигуры;</li>
+                <li>Материалы;</li>
+                <li>Рендерер и т.д.</li>
+            </ul>
+
+            <p>К примеру, код по созданию куба выглядит следующим образом (без учета текстуры, камеры, освещения и рендерера):</p>
+            <code>
+                <pre class='scene__code-block'>
+                    const width = 8;  // ui: width
+                    const height = 8;  // ui: height
+                    const depth = 8;  // ui: depth
+                    const geometry = new THREE.BoxGeometry(width, height, depth);
+                </pre>
+            </code>
+        </div>
+    </section>
+
+    <section class='scene scene__4'>
+        <div class='scene__content'>
+            <h1 class='scene__title'>Three.js</h1>
+
+            <div class='scene__comparison-block'>
+                <div class='scene__positive-points'>
+                    <h3>Плюсы</h3>
+                    <ul>
+                        <li>Активно поддерживаемая разработка (* на момент написании данного документа, последний коммит был сделан 19 минут назад);</li>
+                        <li>Имеет русскую документацию (<a href='https://threejs.org/manual/#ru/scenegraph' target='_blank'>ссылка</a>);</li>
+                        <li>Возможность интеграции с React, Vue и Angular;</li>
+                        <li>Большое сообщество;</li>
+                        <li>Изобилие туториалов и примеров выполненных работ;</li>
+                        <li>Идеальный инструмент для веб-анимации общего назначения.</li>
+                    </ul>
+                </div>
+                <div class='scene__negative-points'>
+                    <h3>Минусы</h3>
+                    <ul>
+                        <li>Неоправданная сложность самой библиотеки;</li>
+                        <li>Много рутинного кода, переходящего от проекта к проекту;</li>
+                        <li>Несвоевременное обновление документации;</li>
+                        <li>Усложняет задачу по поддержанию чистого кода.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p>
+                Для интеграции с Angular существует отдельная библиотека <b>atft</b> (<a href='https://github.com/makimenko/angular-template-for-threejs' target='_blank'>github</a>),
+                а для рендеринга в Vue - <b>vue-gl</b> (<a href='https://github.com/vue-gl/vue-gl' target='_blank'>github</a>).
+            </p>
+
+            <p>Three.js изобилует большим количеством примеров. Одним из самых известным является та самая планета на главной странице GitHub.</p>
+            <div class='scene__demo-gallery'>
+                <div class='scene__demo-gallery-item'>
+                    <a href='https://github.com/home' target='_blank'>
+                        <img src='assets/threejs-examples/1.png' class='scene__link-image' alt='github'/>
+                    </a>
+                </div>
+                <div class='scene__demo-gallery-item'>
+                    <a href='https://within-unlimited.github.io/neon-lights/release/' target='_blank'>
+                        <img src='assets/threejs-examples/2.png' class='scene__link-image' alt='under neon lights'/>
+                    </a>
+                </div>
+                <div class='scene__demo-gallery-item'>
+                    <a href='https://demos.littleworkshop.fr/track' target='_blank'>
+                        <img src='assets/threejs-examples/3.png' class='scene__link-image' alt='track example'/>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class='scene scene__5'>
+        <div class='scene__content'>
+            <h1 class='scene__title'>Babylon.js</h1>
+
+            <span><span class='scene__gray-text'>Год:</span> 2013</span><br/>
+            <span><span class='scene__gray-text'>Лицензия:</span> Apache-2.0</span><br/>
+            <span><span class='scene__gray-text'>Официальный сайт:</span> <a href='https://www.babylonjs.com/' target='_blank'>www.babylonjs.com</a></span><br/>
+            <span><span class='scene__gray-text'>GitHub:</span> <a href='https://github.com/BabylonJS/Babylon.js' target='_blank'>github.com/BabylonJS/Babylon.js</a> (15.9K звёзд)</span><br/>
+            <span><span class='scene__gray-text'>Разработчик:</span> Microsoft</span><br/>
+
+            <p>Babylon.js - Легковесный кроссбраузерный JavaScript-фреймворк, использующий API WebGL для отображения 2D и 3D-графики в браузере без использования каких-либо сторонних плагинов и дополнений.</p>
+
+            <p>В число возможностей фреймворка входит:</p>
+            <ul>
+                <li>Набор готовых мешей (<a href='https://en.wikipedia.org/wiki/Polygon_mesh' target='_blank'>Mesh</a> - это сетка полигонов, из которых состоит любой 3D объект в компьютерной графике);</li>
+                <li>Источники света;</li>
+                <li>Выбор метриала;</li>
+                <li>Различные виды камер (в т.ч. для мобильных устройств, геймпадов и устройств VR);</li>
+                <li>Анимационный движок;</li>
+                <li>Система частиц;</li>
+                <li>Методы оптимизации и т.д.</li>
+            </ul>
+
+            <p>В ряде некоторых проектов Babylon.js можно сочетаь c <b>Cannon.js</b> (речь о котором пойдет далее).</p>
+
+            <p>Для сравнения с Three.js, в Babylon.js код по созданию куба выглядит следующим образом</p>
+            <code>
+                <pre class='scene__code-block'>
+                    const box = BABYLON.MeshBuilder.CreateBox("box", {});
+                </pre>
+            </code>
+        </div>
+    </section>
+
+    <section class='scene scene__6'>
+        <div class='scene__content'>
+            <h1 class='scene__title'>Babylon.js</h1>
+
+            <div class='scene__comparison-block'>
+                <div class='scene__positive-points'>
+                    <h3>Плюсы</h3>
+                    <ul>
+                        <li>
+                            Обширная документация на официальном сайте, включающая различные грани изучения - апи,
+                            коммьюнити, форум, видео-туториалы, песочницы и т.д;
+                        </li>
+                        <li>Предлагает больше рычагов для настройки сцена, нежели его ближайший аналог Three.js;</li>
+                        <li>
+                            Информация об интеграции с прочими Angular, React, React Native и т.д. представлена прямо
+                            на официальном сайте (<a href='https://doc.babylonjs.com/extensions/Babylon.js+ExternalLibraries/BabylonJS_and_Ionic_Angular' target='_blank'>источник</a>);
+                        </li>
+                        <li>Написан на TypeScript (однако это не мешает использовать его на чистом JavaScript).</li>
+                    </ul>
+                </div>
+                <div class='scene__negative-points'>
+                    <h3>Минусы</h3>
+                    <ul>
+                        <li>Запутанный roadmap в документации;</li>
+                        <li>В виду большого количества возможных настроек выглядит пугающе для новичков.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p>Примеры работ:</p>
+            <div class='scene__demo-gallery'>
+                <div class='scene__demo-gallery-item'>
+                    <a href='https://www.babylonjs.com/demos/wcafe/' target='_blank'>
+                        <img src='assets/babylonjs-examples/1.png' class='scene__link-image' alt='windows cafe'/>
+                    </a>
+                </div>
+                <div class='scene__demo-gallery-item'>
+                    <a href='https://ld47.fds.im/' target='_blank'>
+                        <img src='assets/babylonjs-examples/2.png' class='scene__link-image' alt='czech startups'/>
+                    </a>
+                </div>
+                <div class='scene__demo-gallery-item'>
+                    <a href='https://carte2020.wanadev.io/' target='_blank'>
+                        <img src='assets/babylonjs-examples/3.png' class='scene__link-image' alt='wanadev'/>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class='scene scene__7'>
+        <div class='scene__content'>
+            <h1 class='scene__title'>Cannon.js</h1>
+
+            <span class='scene__badge'>no webgl</span><br/>
+
+            <span><span class='scene__gray-text'>Год:</span> 2015</span><br/>
+            <span><span class='scene__gray-text'>Официальный сайт:</span> <a href='http://www.cannonjs.org/' target='_blank'>www.cannonjs.org</a></span><br/>
+            <span><span class='scene__gray-text'>GitHub:</span> <a href='https://github.com/schteppe/cannon.js' target='_blank'>github.com/schteppe/cannon.js</a> (3.8K звёзд)</span><br/>
+            <span><span class='scene__gray-text'>Документация:</span> <a href='https://schteppe.github.io/cannon.js/docs/' target='_blank'>schteppe.github.io/cannon.js</a></span><br/>
+            <span><span class='scene__gray-text'>Демо:</span> <a href='https://schteppe.github.io/cannon.js/' target='_blank'>schteppe.github.io/cannon.js/</a></span><br/>
+
+            <p>
+                Cannon.js - легковесный 3D физический движок JavaScript с открытым исходным кодом.
+                Главным его преимуществом является хорошая симуляция физики и столкновения частиц.
+                Сама идея проекта вдохновлена такими библиотеками Three.js и ammo.js.
+            </p>
+
+            <p>
+                Движок твердого тела включает в себя простое обнаружение столкновений, различные формы тел, контакты, трение и т.д..
+                Cannon.js написан на JavaScript и может использоваться с любым движком рендеринга или игровым движком, который поддерживает браузеры.
+                Как было упомянуто ранее, данный движок неплохо сочетается с Three.js и Babylon.js.
+            </p>
+
+            <p>Отойдем от уже привычного примера создания куба, и создадим МИР:</p>
+            <code>
+                <pre class='scene__code-block'>
+                    const world = new CANNON.World();
+                    world.gravity.set(0,0,-9.82);
+                </pre>
+            </code>
+
+            <p>
+                Собственно, каждое Cannon.js приложение на самом деле именно с этого и начинается - с создания мира.
+                CANNON.World - это физический центр управления объектами и симуляциями. Процесс работы с движком отмечается своей простотой.
+            </p>
+        </div>
+    </section>
+
+    <section class='scene scene__8'>
+        <div class='scene__content'>
+            <h1 class='scene__title'>Cannon.js</h1>
+
+            <p>
+                Cannon.js не является единственным возможным движком, который можно использовать при написании JavaScript.
+                В число его аналогов входят таких движки как <b>Ammo.js</b> и <b>Oimo.js</b>.
+            </p>
+
+            <p>Демо работы Cannon.js:</p>
+            <div class='scene__demo-gallery'>
+                <div class='scene__demo-gallery-item'>
+                    <a href='https://codepen.io/b29/full/bGbLddb' target='_blank'>
+                        <img src='assets/cannonjs-examples/1.png' class='scene__link-image' alt='basketball cort'/>
+                    </a>
+                </div>
+                <div class='scene__demo-gallery-item'>
+                    <a href='https://codepen.io/strangerintheq/full/YzzLrzd' target='_blank'>
+                        <img src='assets/cannonjs-examples/2.png' class='scene__link-image' alt='monopoly'/>
+                    </a>
+                </div>
+                <div class='scene__demo-gallery-item'>
+                    <a href='https://codepen.io/b29/full/JjyJWEg' target='_blank'>
+                        <img src='assets/cannonjs-examples/3.png' class='scene__link-image' alt='jogging'/>
+                    </a>
+                </div>
+            </div>
+
+            <p>
+                Правда большинство встреченных работ страдают отсутствием корректного освещения в следствие того что
+                Cannon.js не занимается вопросами освещения. Чаще всего на себя эту ответственность берет либо Three.js,
+                либо Babylon.js, либо любая другая библиотека, которая идет в связке с движком. Примечательно, что
+                каждый цикл отрисовки придется вручную перемещать соответствующий объект на сцене на место расположения
+                физического объекта.
+            </p>
+
+            <p>
+                К сожалению, на сегодняшний день движок не развивается и последний раз обновлялся 3 мая 2016 года.
+                Ссылки на документацию и примеры из официального сайта сломаны (однако их все еще можно найти в интернете).
+                В виду этого, возможно, очень скоро (а возможно даже уже) использование библиотеки на проектах будет под вопросом.
+            </p>
+        </div>
+    </section>
+
+    <section class='scene scene__9'>
+        <div class='scene__content'>
+            <h1 class='scene__title'>Ammo.js</h1>
+
+            <span class='scene__badge'>no webgl</span><br/>
+
+            <span><span class='scene__gray-text'>Год:</span> 2011</span><br/>
+            <span><span class='scene__gray-text'>GitHub:</span> <a href='https://github.com/kripken/ammo.js' target='_blank'>github.com/kripken/ammo.js</a> (3К звёзд)</span><br/>
+            <span><span class='scene__gray-text'>Документация:</span> <a href='http://kripken.github.io/ammo.js/' target='_blank'>github.io/ammo.js/</a></span><br/>
+
+            <p>
+                Так же известен под названием ammonext. Еще один движок для реализации физики. Является портом <b>Bullet physics engine</b> на JavaScript.
+                Соответственно, исходный код библиотеки написан на С++. В связи с этим возникают некоторые трудности использования -
+                например, указатели добавляют дополнительный уровень сложность. Однако мест, которые затронуты подобными проблемами не так много.
+            </p>
+
+            <p>
+                Функционал библиотеки достаточно обширен. Сюда входит и непрерывное обнаружение столкновений, ограничения,
+                мощную систему транспортных средств и множество способов точной настройки сцены.
+                Как и в случае с Cannon.js, для работы с ним потребуется отдельная библиотека для визуализации.
+                И так же необходимо синхронизировать каждый цикл перерисовки объекта на сцене с его физической моделью.
+            </p>
+
+            <p>
+                Явно хорошим качеством является то, что библиотека продолжает развиваться и по сей день.
+                В некоторых случаях API запутано и документация не дает ответы на все вопросы.
+            </p>
+
+            <hr class='scene__delimiter'/>
+
+            <p>
+                Bullet Physics Library - физический движок, который поддерживает обнаружение 3D- столкновений ,
+                моделирование физики твердого тела и моделирование неупругой физики с деформациями.
+                Он используется при разработке компьютерных игр и для создания визуальных эффектов в фильмах.
+                (<a href='https://github.com/bulletphysics/bullet3' target='_blank'>github</a>)
+            </p>
+        </div>
+    </section>
+
+    <section class='scene scene__10'>
+        <div class='scene__content'>
+            <h1 class='scene__title'>Ammo.js</h1>
+
+            <p>
+                Способ создания физических объектов может выглядеть затянуто, однако ammo.js позволяет выполнять детальную настройку.
+                К сожалению, из всего перечня возможной 3D функциональности, библиотека не поддерживает события столкновений.
+                Чтобы найти и обработать коллизии, придется получить список объектов и преобразовать их.
+            </p>
+
+            <p>Общее ревью по библиотеке:</p>
+            <ul>
+                <li>Одна из самых полных физических библиотек;</li>
+                <li>Есть вопросы с производительностью в виду того, что библиотека написана не на javaScript, а является портацией;</li>
+                <li>Неполная документация, вследствие этого некоторые API могут сбивать с толку;</li>
+                <li>Поддержка браузеров: Chrome, Firefox, Safari.</li>
+            </ul>
+
+            <p>Небольшие демо с документации:</p>
+
+            <div class='scene__demo-gallery'>
+                <div class='scene__demo-gallery-item'>
+                    <a href='https://rawcdn.githack.com/kripken/ammo.js/99d0ec0b1e26d7ccc13e013caba8e8a5c98d953b/examples/webgl_demo_softbody_rope/index.html' target='_blank'>
+                        <img src='assets/ammojs-examples/1.png' class='scene__link-image' alt='rope demo'/>
+                    </a>
+                </div>
+                <div class='scene__demo-gallery-item'>
+                    <a href='https://rawcdn.githack.com/kripken/ammo.js/99d0ec0b1e26d7ccc13e013caba8e8a5c98d953b/examples/webgl_demo_softbody_volume/index.html' target='_blank'>
+                        <img src='assets/ammojs-examples/2.png' class='scene__link-image' alt='volume demo'/>
+                    </a>
+                </div>
+                <div class='scene__demo-gallery-item'>
+                    <a href='https://rawcdn.githack.com/kripken/ammo.js/99d0ec0b1e26d7ccc13e013caba8e8a5c98d953b/examples/webgl_demo_vehicle/index.html' target='_blank'>
+                        <img src='assets/ammojs-examples/3.png' class='scene__link-image' alt='car demo'/>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class='scene scene__11'>
+        <div class='scene__content'>
+            <h1 class='scene__title'>Oimo.js</h1>
+
+            <span><span class='scene__gray-text'>Год:</span> 2013</span><br/>
+            <span><span class='scene__gray-text'>Лицензия:</span> MIT</span><br/>
+            <span><span class='scene__gray-text'>Официальный сайт:</span> <a href='http://lo-th.github.io/Oimo.js/#basic' target='_blank'>lo-th.github.io/Oimo.js</a></span><br/>
+            <span><span class='scene__gray-text'>GitHub:</span> <a href='https://github.com/lo-th/Oimo.js' target='_blank'>github.com/lo-th/Oimo.js</a> (2.5K звёзд)</span><br/>
+
+            <p>
+                Oimo.js — 3D физический движок для JavaScript.
+                В сравнении с другими решениями, обладает очень хорошей производительностью и точностью,
+                однако поддерживает только примитивную геометрию.
+            </p>
+
+            <p>Примечательно, что движок включен в состав Babylon.js.</p>
+
+            <p>Большим минусом движка является не очень качественная документация.</p>
+
+            <p>Демо примеры с официального сайта:</p>
+
+            <div class='scene__demo-gallery'>
+                <div class='scene__demo-gallery-item'>
+                    <a href='http://lo-th.github.io/Oimo.js/index.html#jewel' target='_blank'>
+                        <img src='assets/oimojs-examples/1.png' class='scene__link-image' alt='jewel'/>
+                    </a>
+                </div>
+                <div class='scene__demo-gallery-item'>
+                    <a href='http://lo-th.github.io/Oimo.js/index.html#planet' target='_blank'>
+                        <img src='assets/oimojs-examples/2.png' class='scene__link-image' alt='planet'/>
+                    </a>
+                </div>
+                <div class='scene__demo-gallery-item'>
+                    <a href='http://lo-th.github.io/Oimo.js/#stacking' target='_blank'>
+                        <img src='assets/oimojs-examples/3.png' class='scene__link-image' alt='stacking'/>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class='scene scene__12'>
+        <div class='scene__content'>
+            <h1 class='scene__title'>Cesium.js</h1>
+
+            <span><span class='scene__gray-text'>Лицензия:</span> Apache-2.0</span><br/>
+            <span><span class='scene__gray-text'>Официальный сайт: </span> <a href='https://cesium.com/platform/cesiumjs/' target='_blank'>cesium.com/platform/cesiumjs/</a></span><br/>
+            <span><span class='scene__gray-text'>GitHub:</span> <a href='https://github.com/CesiumGS/cesium' target='_blank'>github.com/CesiumGS/cesium</a> (8.3K звёзд)</span><br/>
+
+            <p>
+                Cesium.js - представляет собой JavaScript библиотеку для создания 3D-глобусов и 2D-карт.
+                Он использует WebGL для графики с аппаратным ускорением, является кроссбраузерным и настроенным для
+                визуализации динамических данных.
+            </p>
+
+            <p>В базовый функционал входит</p>
+            <ul>
+                <li>Создание динамических визуализаций;</li>
+                <li>Визуализация рельефа;</li>
+                <li>Оптимизация WebGL;</li>
+                <li>Отрисовка большого набора различных геометрий, таких как линии, полигоны, щиты, подписи и т.д.;</li>
+                <li>Использование стандартных виджетов для управления временем анимации, выбором слоёв и масштабирования на точку.</li>
+            </ul>
+
+            <p>Примеры работ (больше на официальном сайте):</p>
+
+            <div class='scene__demo-gallery'>
+                <div class='scene__demo-gallery-item'>
+                    <a href='https://demos.cesium.com/NewYork/?view=-74.02184281230915%2C40.68050769399882%2C1448.5204758604589%2C21.27879743329414%2C-21.343896640394718%2C0.07169890006165018' target='_blank'>
+                        <img src='assets/cesiumjs-examples/1.png' class='scene__link-image' alt='nyc'/>
+                    </a>
+                </div>
+                <div class='scene__demo-gallery-item'>
+                    <a href='https://map.geo.admin.ch/?lang=de&topic=ech&bgLayer=ch.swisstopo.pixelkarte-farbe&layers=ch.swisstopo.zeitreihen,ch.bfs.gebaeude_wohnungs_register,ch.bav.haltestellen-oev,ch.swisstopo.swisstlm3d-wanderwege,ch.astra.wanderland-sperrungen_umleitungen,ch.swisstopo.swissnames3d&layers_opacity=1,1,1,0.8,0.8,1&layers_timestamp=18641231,,,,,&layers_visibility=false,false,false,false,false,true&lon=7.44086&lat=46.94380&elevation=796&heading=345.011&pitch=-10.009' target='_blank'>
+                        <img src='assets/cesiumjs-examples/2.png' class='scene__link-image' alt='switzerland'/>
+                    </a>
+                </div>
+                <div class='scene__demo-gallery-item'>
+                    <a href='https://trek.nasa.gov/mars/#v=0.1&x=-20.55099999997765&y=20.55099999997765&z=1&p=urn%3Aogc%3Adef%3Acrs%3AIAU2000%3A%3A49920&d=&locale=&b=mars&e=-6784895.555799146%2C-3406552.1076595713%2C6784854.453799146%2C3406593.2096595713&sfz=&w=' target='_blank'>
+                        <img src='assets/cesiumjs-examples/3.png' class='scene__link-image' alt='mars'/>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class='scene scene__13'>
+        <div class='scene__content'>
+            <h1 class='scene__title'>Deck.gl</h1>
+
+            <span><span class='scene__gray-text'>Лицензия:</span> MIT</span><br/>
+            <span><span class='scene__gray-text'>Официальный сайт: </span> <a href='https://deck.gl/' target='_blank'>deck.gl</a></span><br/>
+            <span><span class='scene__gray-text'>GitHub:</span> <a href='https://github.com/visgl/deck.gl' target='_blank'>github.com/visgl/deck.glm</a> (9.5K звёзд)</span><br/>
+
+            <p>
+                Deck.gl представляет собой еще одну библиотеку для отображения 2D и 3D карт.
+                Предназначение - упрощение визуального восприятия картографических данных на основе WebGL.
+            </p>
+
+            <p>
+                Deck.gl отображает данные (обычно массив объектов в JSON) в стек визуальных слоев - например иконки,
+                полигоны, тексты. Библиотека решает ряд задач:
+            </p>
+
+            <ul>
+                <li>Эффективный рендеринг и обновление больших наборов данных;</li>
+                <li>Обработка таких событий, как выбор, выделение и фильтрация;</li>
+                <li>Картографические проекции и интеграция с основными поставщиками базовых карт и т.д.</li>
+            </ul>
+
+            <p>Демо:</p>
+
+            <div class='scene__demo-gallery'>
+                <div class='scene__demo-gallery-item'>
+                    <a href='https://deck.gl/examples/arcgis/' target='_blank'>
+                        <img src='assets/deckgl-examples/1.png' class='scene__link-image' alt='arcgis'/>
+                    </a>
+                </div>
+                <div class='scene__demo-gallery-item'>
+                    <a href='https://deck.gl/examples/globe-view/' target='_blank'>
+                        <img src='assets/deckgl-examples/2.png' class='scene__link-image' alt='globe'/>
+                    </a>
+                </div>
+                <div class='scene__demo-gallery-item'>
+                    <a href='https://deck.gl/examples/trips-layer/' target='_blank'>
+                        <img src='assets/deckgl-examples/3.png' class='scene__link-image' alt='nyc'/>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class='scene scene__14'>
+        <div class='scene__content'>
+            <h1 class='scene__title'>Lume</h1>
+
+            <span><span class='scene__gray-text'>Лицензия:</span> MIT</span><br/>
+            <span><span class='scene__gray-text'>Официальный сайт: </span> <a href='https://docs.lume.io//#/' target='_blank'>docs.lume.io</a></span><br/>
+            <span><span class='scene__gray-text'>GitHub:</span> <a href='https://github.com/lume/lume' target='_blank'>github.com/lume/lume</a> (672 звёзды)</span><br/>
+
+            <p>
+                Lume - активно развивающаяся библиотека, призванная упростить создание насыщенных и интерактивных 2D и
+                3D приложений.
+            </p>
+
+            <p>Библиотека состоит из:</p>
+
+            <ul>
+                <li>Движка WebGL, написанного на ассемблере;</li>
+                <li>Системы для определения HTML-элементов;</li>
+                <li>Реактивных переменных для наблюдения;</li>
+                <li>
+                    Смешивания функций с HTML-элементами. Это позволяет дополнить элементы HTML-функциями, называемыми
+                    "поведениями", которые аналогичные пользовательским элементам: каждон поведение определяется как класс,
+                    который имеет одни и те же методы жизненного цикла, что и пользовательские элементы.
+                </li>
+            </ul>
+
+            <p>Демо c официального сайта:</p>
+
+            <div class='scene__demo-gallery'>
+                <div class='scene__demo-gallery-item'>
+                    <a href='https://docs.lume.io//#/examples/nasa-astrobee-robot/' target='_blank'>
+                        <img src='assets/lume-examples/1.png' class='scene__link-image' alt='robot'/>
+                    </a>
+                </div>
+                <div class='scene__demo-gallery-item'>
+                    <a href='https://docs.lume.io//#/examples/disco-helmet/' target='_blank'>
+                        <img src='assets/lume-examples/2.png' class='scene__link-image' alt='helmet'/>
+                    </a>
+                </div>
+                <div class='scene__demo-gallery-item'>
+                    <a href='https://docs.lume.io//#/examples/hello-world/' target='_blank'>
+                        <img src='assets/lume-examples/3.png' class='scene__link-image' alt='globe'/>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class='scene scene__15'>
+        <div class='scene__content'>
+
+            <div class='scene__cortege-cards'>
+                <div class='scene__cortege-card'>
+                    <h1 class='scene__title'>Phoria.js</h1>
+
+                    <span class='scene__badge'>no webgl</span><br/>
+
+                    <span><span class='scene__gray-text'>Год выхода:</span> 2013</span><br/>
+                    <span><span class='scene__gray-text'>Год последнего обновления:</span> 2015</span><br/>
+                    <span><span class='scene__gray-text'>Лицензия:</span> BSD-3-Clause</span><br/>
+                    <span><span class='scene__gray-text'>Официальный сайт: </span> <a href='http://www.kevs3d.co.uk/dev/phoria/' target='_blank'>kevs3d.co.uk/dev/phoria</a></span><br/>
+                    <span><span class='scene__gray-text'>GitHub:</span> <a href='https://github.com/kevinroast/phoria.js' target='_blank'>github.com/kevinroast/phoria.js</a> (460 звёзд)</span><br/>
+
+                    <p>Работает на всех браузерах, поддерживающих HTML5.</p>
+                </div>
+
+                <div class='scene__vertical-delimiter'></div>
+
+                <div class='scene__cortege-card'>
+                    <h1 class='scene__title'>LightGL.js</h1>
+
+                    <span><span class='scene__gray-text'>Год выхода:</span> 2011</span><br/>
+                    <span><span class='scene__gray-text'>Год последнего обновления:</span> 2016</span><br/>
+                    <span><span class='scene__gray-text'>Лицензия:</span> MIT</span><br/>
+                    <span><span class='scene__gray-text'>GitHub:</span> <a href='https://github.com/evanw/lightgl.js' target='_blank'>github.com/evanw/lightgl.js</a> (1.4К звёзд)</span><br/>
+
+                </div>
+            </div>
+
+            <hr class='scene__delimiter'/>
+
+            <div class='scene__cortege-cards'>
+                <div class='scene__cortege-card'>
+                    <h1 class='scene__title'>Scene.js</h1>
+
+                    <span><span class='scene__gray-text'>Год выхода:</span> 2019</span><br/>
+                    <span><span class='scene__gray-text'>Год последнего обновления:</span> 2021</span><br/>
+                    <span><span class='scene__gray-text'>Лицензия:</span> MIT</span><br/>
+                    <span><span class='scene__gray-text'>Официальный сайт: </span> <a href='https://scene.js.org/' target='_blank'>scene.js.org</a></span><br/>
+                    <span><span class='scene__gray-text'>GitHub:</span> <a href='https://github.com/daybrush/scenejs' target='_blank'>github.com/daybrush/scenejs</a> (2К звёзд)</span><br/>
+                </div>
+
+                <div class='scene__vertical-delimiter'></div>
+
+                <div class='scene__cortege-card'>
+                    <h1 class='scene__title'>Seen.js</h1>
+
+                    <span><span class='scene__gray-text'>Год выхода:</span> 2014</span><br/>
+                    <span><span class='scene__gray-text'>Год последнего обновления:</span> 2016</span><br/>
+                    <span><span class='scene__gray-text'>Официальный сайт: </span> <a href='http://seenjs.io/' target='_blank'>seenjs.io</a></span><br/>
+                    <span><span class='scene__gray-text'>GitHub:</span> <a href='https://github.com/themadcreator/seen' target='_blank'>github.com/themadcreator/seen</a> (873 звёзды)</span><br/>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class='scene scene__16'>
+        <h1 class='title'>Спасибо за внимание!</h1>
+    </section>
+
+    <script src='js/main.js'></script>
+    <script src='js/three.js'></script>
+    <script src='js/animations.js'></script>
+</body>
+</html>

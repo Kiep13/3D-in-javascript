@@ -1,0 +1,140 @@
+:root {
+    --light-gray: #F2F5F5;
+    --dark-gray: #9b9b9b;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.scene {
+    height: calc(100vh - 100px);
+    position: relative;
+    padding: 50px;
+    z-index: 99;
+}
+
+.scene__content {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.scene__title {
+    font-weight: 500;
+    font-size: 3rem;
+}
+
+.scene__gray-text {
+    color: var(--dark-gray);
+}
+
+.scene__comparison-block,
+.scene__demo-gallery {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+}
+
+.scene__positive-points,
+.scene__negative-points,
+.scene__demo-gallery-item {
+    flex: 1
+}
+
+.scene__link-image {
+    max-height: 200px;
+}
+
+.scene__code-block {
+    background: var(--light-gray);
+    border-radius: 4px;
+    padding: 15px 15px 0;
+}
+
+.scene__badge {
+    display: block;
+    width: fit-content;
+    padding: 4px 10px;
+    border-radius: 30px;
+
+    color: white;
+    background-color: #2a2a72;
+    background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
+
+    margin-bottom: 10px;
+}
+
+.scene__delimiter {
+    width: 100%;
+}
+
+.scene__cortege-cards {
+    display: flex;
+    flex-direction: row;
+}
+
+.scene__cortege-card {
+    flex: 1;
+}
+
+.scene__vertical-delimiter {
+    border: 0.5px solid #9b9b9b;
+    margin: 20px;
+}
+
+.scene__1,
+.scene__16 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scene__1 .header {
+    position: absolute;
+    left: 50px;
+    top: 50px;
+}
+
+.scene__1 .header__logo {
+    width: 200px;
+}
+
+.scene__1 .title,
+.scene__16 .title {
+    display: block;
+    text-align: center;
+    margin: 0;
+    font-weight: 100;
+    font-size: 9rem;
+}
+
+.scene__16 {
+    padding-top: 0;
+}
+
+.scene__2,
+.scene__3,
+.scene__4,
+.scene__5,
+.scene__6,
+.scene__7,
+.scene__8,
+.scene__9,
+.scene__10,
+.scene__11,
+.scene__12,
+.scene__13,
+.scene__14,
+.scene__15,
+.scene__16 {
+    display: none;
+}
